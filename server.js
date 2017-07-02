@@ -4,6 +4,7 @@ const open = require('open');
 var portfinder = require('portfinder');
 const webpack = require('webpack');
 const config = require('./webpack.config.dev');
+require('dotenv').config();
 
 const app = express();
 const compiler = webpack(config);
