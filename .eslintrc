@@ -1,4 +1,6 @@
-lint:recommended",
+{
+  "extends": [
+    "eslint:recommended",
     "plugin:import/errors",
     "plugin:import/warnings"
   ],
@@ -16,7 +18,6 @@ lint:recommended",
     "es6": true,
     "browser": true,
     "node": true,
-    "jquery": true,
     "mocha": true
   },
   "rules": {
@@ -24,7 +25,10 @@ lint:recommended",
     "no-console": 1,
     "no-debugger": 1,
     "no-var": 1,
-    "semi": [1, "always"],
+    "semi": [
+      1,
+      "always"
+    ],
     "no-trailing-spaces": 0,
     "eol-last": 0,
     "no-unused-vars": 0,
@@ -32,8 +36,20 @@ lint:recommended",
     "no-alert": 0,
     "no-lone-blocks": 0,
     "jsx-quotes": 1,
-    "react/display-name": [ 1, {"ignoreTranspilerName": false }],
-    "react/forbid-prop-types": [1, {"forbid": ["any"]}],
+    "react/display-name": [
+      1,
+      {
+        "ignoreTranspilerName": false
+      }
+    ],
+    "react/forbid-prop-types": [
+      1,
+      {
+        "forbid": [
+          "any"
+        ]
+      }
+    ],
     "react/jsx-boolean-value": 1,
     "react/jsx-closing-bracket-location": 0,
     "react/jsx-curly-spacing": 1,
@@ -59,9 +75,7 @@ lint:recommended",
     "react/prefer-es6-class": 1,
     "react/prop-types": 1,
     "react/react-in-jsx-scope": 1,
-    "react/require-extension": 1,
     "react/self-closing-comp": 1,
-    "react/sort-comp": 1,
-    "react/wrap-multilines": 1
+    "react/sort-comp": 1
   }
 }
