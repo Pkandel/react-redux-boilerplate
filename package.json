@@ -25,6 +25,7 @@
   "homepage": "https://github.com/pkandel/react-redux#readme",
   "dependencies": {
     "axios": "^0.16.2",
+    "dotenv": "^4.0.0",
     "path": "^0.12.7",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",

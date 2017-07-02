@@ -66,7 +66,7 @@ module.exports = {
         ],
         extensions: ['.js', '.jsx', '.json', '.css', '.sass'],
         alias: {
-            App: path.resolve(__dirname, 'src/app')
+            Root: path.resolve(__dirname, 'src/Root')
         }
 
     }
