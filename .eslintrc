@@ -21,7 +21,11 @@
     "mocha": true
   },
   "settings": {
-    "import/resolver": "webpack"
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.dev.js"
+      }
+    }
   },
   "rules": {
     "quotes": 0,
