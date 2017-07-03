@@ -1,9 +1,11 @@
-const express = require('express');
-const path = require('path');
-const open = require('open');
-var portfinder = require('portfinder');
-const webpack = require('webpack');
-const config = require('./webpack.config.dev');
+/* eslint-disable no-console */
+import colors from 'colors';
+import express from 'express';
+import path from 'path';
+import open from 'open';
+import portfinder from 'portfinder';
+import webpack from 'webpack';
+import config from './webpack.config.dev';
 require('dotenv').config();
 
 const app = express();
@@ -35,9 +37,9 @@ portfinder.basePort = 3000 || process.env.PORT;
 portfinder.getPort(function (err, port) {
 app.listen(port, function (err) {
     if(err) {
-        console.log(err);
+        console.log(err.red);
      } else {
-    console.log(`Listening at http://localhost:${port}/`);
+    console.log(`Listening at http://localhost:${port}/`.green);
     open(`http://localhost:${port}`);
     } 
 });
