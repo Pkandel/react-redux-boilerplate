@@ -14,6 +14,7 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
+    
     ],
     devtool: 'cheap-module-eval-source-map',
     module: {

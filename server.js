@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+ /* eslint-disable no-console */
 import colors from 'colors';
 import express from 'express';
 import path from 'path';

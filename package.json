@@ -6,6 +6,7 @@
   "scripts": {
     "start": "babel-node server.js",
     "lint": "node_modules/.bin/esw webpack.config.* src",
+    "lint:watch": "npm run lint -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -47,6 +48,7 @@
     "colors": "^1.1.2",
     "css-loader": "^0.28.4",
     "eslint": "^4.1.1",
+    "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-plugin-import": "^2.6.1",
     "eslint-plugin-react": "^7.1.0",
     "eslint-watch": "^3.1.2",

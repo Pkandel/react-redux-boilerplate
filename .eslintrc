@@ -20,6 +20,9 @@
     "node": true,
     "mocha": true
   },
+  "settings": {
+    "import/resolver": "webpack"
+  },
   "rules": {
     "quotes": 0,
     "no-console": 1,
