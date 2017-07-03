@@ -12,7 +12,8 @@ module.exports = {
         publicPath: '/static/'
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
     ],
     devtool: 'cheap-module-eval-source-map',
     module: {
@@ -54,10 +55,6 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
-    ],
     //options for resolving module requests
     resolve: {
         modules: [
