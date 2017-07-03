@@ -1,5 +1,6 @@
 "use strict";
 import React, { Component } from 'react';
+import './root.scss';
 class Root extends Component {
     render() {
         const todos = {
