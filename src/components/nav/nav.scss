@@ -3,13 +3,26 @@
   li {
     display: block;
     margin: 20px;
-  }
-  a {
-    color: black;
-    text-decoration: none;
-  }
-    .active {
-      color :green;
+    a {
+      color: black;
+      text-decoration: none;
     }
-
+    a:hover {
+      color: white;
+    }
+    .active {
+      color :white;
+    }
+  }
 }
+
+// Remarks
+
+/**************************************
+1. a{ :hover } property does not work so it has to be outside
+
+
+
+
+
+****************************************/

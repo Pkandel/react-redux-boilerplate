@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
  import { Router } from '../';
  import { Nav } from '../../components';
+ import './app.scss';
 
 class App extends Component {
     constructor() {
@@ -10,8 +11,10 @@ class App extends Component {
 
     render() {
         return(
-            <div>
-                <Nav />
+            <div className="app">
+                <div className="head">
+                    <Nav />
+                </div>
                 <div className="body">
                     <Router />
                 </div>

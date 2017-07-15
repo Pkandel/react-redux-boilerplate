@@ -1,0 +1,21 @@
+.navbar {
+  display: flex; }
+  .navbar li {
+    display: block;
+    margin: 20px; }
+    .navbar li a {
+      color: black;
+      text-decoration: none; }
+    .navbar li a:hover {
+      color: white; }
+    .navbar li .active {
+      color: white; }
+
+/**************************************
+1. a{ :hover } property does not work so it has to be outside
+
+
+
+
+
+****************************************/
