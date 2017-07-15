@@ -9,8 +9,8 @@ import config from './webpack.config.dev';
 require('dotenv').config();
 
 const app = express();
-const compiler = webpack(config);
 
+const compiler = webpack(config);
 app.use(require('webpack-dev-middleware')(compiler, {
     publicPath: config.output.publicPath,
     // These settings suppress noisy webpack output so only errors are displayed to the console.
@@ -31,7 +31,6 @@ app.use(require('webpack-hot-middleware')(compiler, {log: () => { }}));
 app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
-
 
 portfinder.basePort = 3000 || process.env.PORT;
 portfinder.getPort(function (err, port) {

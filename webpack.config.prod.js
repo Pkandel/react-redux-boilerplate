@@ -6,26 +6,17 @@ const GLOBALS = {
 };
 
 module.exports = {
-    entry: [
-        path.resolve(__dirname, "src")
-    ],
+    devtool: 'source-map',
+    target: 'web',
+    entry: path.resolve(__dirname, "src"),
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
-        publicPath: '/static/'
+        publicPath: '/'
     },
     devServer: {
         contentBase: path.resolve(__dirname, 'dist')
     },
-    target: 'web',
-    devtool: 'sorce-map',
-    plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.DefinePlugin(GLOBALS),
-        new ExtractTextPlugin('style.css'),
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.UglifyJsPlugin()
-    ],
     module: {
         rules: [
             //for jsx loader
@@ -38,21 +29,30 @@ module.exports = {
                     path.resolve(__dirname, 'node_modules'),
                     path.resolve(__dirname, 'build')
                 ],
-                use: ['react-hot-loader',
-                    {
-                        loader: 'babel-loader',
-                    }
+                use: [
+                    'react-hot-loader',
+                    'babel-loader',
                 ]
             },
             //for sass loader
             {
-                test: /\.scss?$/,
-                include: [ path.resolve(__dirname, 'src') ],
-                use: { loader: ExtractTextPlugin.extract("css?sourceMap")}
-
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    //resolve-url-loader may be chained before sass-loader if necessary
+                    use: ['css-loader', 'sass-loader']
+                })
             }
+
         ]
     },
+
+    plugins: [
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.DefinePlugin(GLOBALS),
+        new ExtractTextPlugin("styles.css"),
+        new webpack.optimize.UglifyJsPlugin()
+    ],
     //options for resolving module requests
     resolve: {
         modules: [

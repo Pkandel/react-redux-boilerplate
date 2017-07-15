@@ -15,7 +15,7 @@ module.exports = {
         contentBase: path.resolve(__dirname, 'src')
     },
     target: 'web',
-    devtool: 'cheap-module-eval-sorce-map',
+    devtool: 'cheap-module-eval-source-map',
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
