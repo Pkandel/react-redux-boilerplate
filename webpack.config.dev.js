@@ -11,12 +11,16 @@ module.exports = {
         filename: "bundle.js",
         publicPath: '/static/'
     },
+    devServer: {
+        contentBase: path.resolve(__dirname, 'src')
+    },
+    target: 'web',
+    devtool: 'cheap-module-eval-sorce-map',
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
     
     ],
-    devtool: 'cheap-module-eval-source-map',
     module: {
         rules: [
             //for jsx loader
