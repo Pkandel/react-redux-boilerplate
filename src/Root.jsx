@@ -4,11 +4,12 @@ import './root.scss';
 class Root extends Component {
     render() {
         const todos = {
-            first: ""
+            first: "this is first todo",
+            second:"this is second todo"
         };
         return (
             <div>
-                <h1> hello react and redux starter kit !!!</h1>
+                <pre>{JSON.stringify(todos,null, 2)}</pre>
 
             </div>
         );
