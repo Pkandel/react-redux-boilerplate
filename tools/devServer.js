@@ -5,7 +5,7 @@ import path from 'path';
 import open from 'open';
 import portfinder from 'portfinder';
 import webpack from 'webpack';
-import config from './webpack.config.dev';
+import config from '../webpack.config.dev';
 require('dotenv').config();
 
 const app = express();
@@ -29,7 +29,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use(require('webpack-hot-middleware')(compiler, {log: () => { }}));
 
 app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
+    res.sendFile(path.resolve(__dirname, '../public/index.html'));
 });
 
 portfinder.basePort = 3000 || process.env.PORT;

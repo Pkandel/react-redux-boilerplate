@@ -8,7 +8,7 @@ import colors from 'colors';
 
 process.env.NODE_ENV = 'production'; // this assures React is built in prod mode and that the Babel dev config doesn't apply.
 
-console.log('Generating production build'.green);
+console.log('Generating production build. This might take a while ...'.green);
 
 webpack(config).run((error, stats) => {
     if (error) { // so a fatal error occurred. Stop here.
