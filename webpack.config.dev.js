@@ -30,10 +30,11 @@ module.exports = {
                     path.resolve(__dirname, 'src')
                 ],
                 exclude: [
-                    path.resolve(__dirname, 'node_modules'),
-                    path.resolve(__dirname, 'build')
+                    path.resolve(__dirname, 'node_modules/'),
+                    path.resolve(__dirname, 'dist/')
                 ],
-                use: ['react-hot-loader',
+                use: [
+                    'react-hot-loader',
                     {
                         loader: 'babel-loader',
                     }

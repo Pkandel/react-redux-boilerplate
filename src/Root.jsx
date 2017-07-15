@@ -1,17 +1,14 @@
-"use strict";
+ "use strict";
 import React, { Component } from 'react';
+import  { App }  from './containers';
 import './root.scss';
+import { BrowserRouter } from 'react-router-dom';
 class Root extends Component {
     render() {
-        const todos = {
-            first: "this is first todo",
-            second:"this is second todo"
-        };
         return (
-            <div>
-                <pre>{JSON.stringify(todos,null, 2)}</pre>
-
-            </div>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
         );
     }
 }
