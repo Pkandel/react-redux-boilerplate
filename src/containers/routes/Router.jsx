@@ -9,8 +9,12 @@ class Router extends Component {
 
         return (
             <Switch>
-                <Route  path="/dashboard" component={Dashboard} />
-                <Route  path="/" component={Home}/>
+                <Route exact path="/dashboard" component={Dashboard} />
+                <Route exact path="/my-new-location" render={() => <h1> My New Location </h1>}/>
+                <Route exact path="/profile" render={() => <h1> My Profile </h1>}/>
+                <Route exact path="/account" render={() => <h1> My Account </h1>}/>
+                <Route exact path="/" component={Home}/>
+                <Route path="/*" component={Home} />
             </Switch>
          );
     }

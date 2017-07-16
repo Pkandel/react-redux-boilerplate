@@ -28,10 +28,10 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 app.use(require('webpack-hot-middleware')(compiler, {log: () => { }}));
 
-app.get('*', function (req, res) {
-    res.sendFile(path.resolve(__dirname, '../public/index.html'));
-});
-
+// app.get('*', function (req, res) {
+//     res.sendFile(path.resolve(__dirname, '../public/index.html'));
+// });
+app.use(express.static('public'));
 portfinder.basePort = 3000 || process.env.PORT;
 portfinder.getPort(function (err, port) {
 app.listen(port, function (err) {
