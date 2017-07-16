@@ -8,7 +8,7 @@ import path from 'path';
 require('dotenv').config();
 
 const app = express();
- app.use(compression());
+app.use(compression());
 app.use(express.static(path.resolve(__dirname,'../dist')));
 
 portfinder.basePort = 3000 || process.env.PORT;

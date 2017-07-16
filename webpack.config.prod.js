@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const GLOBALS = {
     'process.env.NODE_ENV' : JSON.stringify('production')
 };
@@ -51,7 +52,10 @@ module.exports = {
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.DefinePlugin(GLOBALS),
         new ExtractTextPlugin("styles.css"),
-        new webpack.optimize.UglifyJsPlugin()
+        new webpack.optimize.UglifyJsPlugin(),
+        new CopyWebpackPlugin([
+            {from:'public/images', to: 'images'}
+        ])
     ],
     //options for resolving module requests
     resolve: {
