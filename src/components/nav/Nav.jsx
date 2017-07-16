@@ -1,19 +1,37 @@
 'use strict';
-import React, {Component} from 'react';
-import {NavLink, Route} from 'react-router-dom';
-import {Dropdown} from '../';
+import React, { Component } from 'react';
+import { NavLink, Route } from 'react-router-dom';
+import { withRouter } from 'react-router';
+import { Dropdown } from '../';
 import './nav.scss';
 
 class Nav extends Component {
 
-
+account = () => {
+    this.props.history.push('/account');
+};
+profile = () => {
+    this.props.history.push('/profile');
+};
     render() {
+        console.log("props from nav", this.props);
         const user = {
             name: "prakash",
             image: "./images/user.png"
         };
+       const dropdownListItem = [{
+            name: "account",
+            onClick: this.account,
+            icon: "settings"
+        },
+        {
+            name: "profile",
+            onClick: this.profile,
+            icon: "exit_to_app"
+        }];
+
         const className = "default";
-        const ButtonToNavigate = ({title, history}) => (
+        const ButtonToNavigate = ({ title, history }) => (
             <button
                 type="button"
                 onClick={() => history.push('/my-new-location')}
@@ -21,7 +39,7 @@ class Nav extends Component {
                 {title}
             </button>
         );
-        const Profile = ({title, history}) => (
+        const Profile = ({ title, history }) => (
             <button
                 type="button"
                 onClick={() => history.push('/profile')}
@@ -29,7 +47,7 @@ class Nav extends Component {
                 {title}
             </button>
         );
-        const Account = ({title, history}) => (
+        const Account = ({ title, history }) => (
             <button
                 type="button"
                 onClick={() => history.push('/account')}
@@ -37,7 +55,7 @@ class Nav extends Component {
                 {title}
             </button>
         );
-        const DropdownComponent = ({history}) => (
+        const DropdownComponent = ({ history }) => (
             <Dropdown
                 type="button"
                 user={user}
@@ -46,11 +64,11 @@ class Nav extends Component {
                     onClick: () => history.push('/account'),
                     icon: "settings"
                 },
-                    {
-                        name: "profile",
-                        onClick: () => history.push('/profile'),
-                        icon: "exit_to_app"
-                    }]}
+                {
+                    name: "profile",
+                    onClick: () => history.push('/profile'),
+                    icon: "exit_to_app"
+                }]}
             />
 
         );
@@ -58,13 +76,14 @@ class Nav extends Component {
             <div className="navbar">
                 <li><NavLink exact to="/" activeClassName="active">Home </NavLink></li>
                 <li><NavLink exact to="/dashboard" activeClassName="active">Dashboard </NavLink></li>
-                <li><Route path="/" render={(props) => <ButtonToNavigate {...props} title="Button as NavLivk"/>}/></li>
-                <li><Route path="/" render={(props) => <DropdownComponent {...props}  />}/></li>
+                <li><Route path="/" render={(props) => <ButtonToNavigate {...props} title="Button as NavLivk" />} /></li>
+                {/* <li><Route path="/" render={(props) => <DropdownComponent {...props} />} /></li> */}
+                <li><Dropdown user={user} dropdownListItem={dropdownListItem} className={className} /></li>
             </div>
-        );
+                );
     }
 }
-export default Nav;
+export default withRouter(Nav);
 
 //Remarks
 /****************************************************
