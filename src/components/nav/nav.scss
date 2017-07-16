@@ -1,5 +1,10 @@
 .navbar {
   display: flex;
+    #dropdown-container {
+      background-color: #02546e !important;
+    }
+
+
   li {
     display: block;
     margin: 20px;
@@ -14,10 +19,13 @@
       color :white;
     }
   }
+
   botton {
     background-color:inherit;
   }
 }
+
+
 
 // Remarks
 
