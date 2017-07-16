@@ -1,0 +1,99 @@
+@import '../style/color.scss';
+.default-dropdown {
+    height: 100%;
+    .dropdown-intern {
+        // background-color: $teal7;
+        height: 100%;
+        .user-profile {
+            height: 100%;
+            &:hover {
+                background-color: $teal7;
+            }
+        }
+        .user-profile-active {
+            background-color: $teal7;
+        }
+        .dropdown-container-intern {
+            background-color: $teal5;
+            border-top: 1px solid $teal9;
+            li {
+                &:hover {
+                    background-color: $teal7;
+                }
+                &:active {
+                    background-color: $teal7;
+                }
+                &:visited {
+                    background-color: $teal7;
+                }
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.cyan-dropdown {
+    .dropdown {
+        background-color: $cyan5;
+        .user-profile {
+            &:hover {
+                background-color: $cyan6;
+            }
+        }
+        .user-profile-active {
+            background-color: $cyan6;
+        }
+        .dropdown-container {
+            background-color: $cyan5;
+            border-top: 1px solid $cyan8;
+            li {
+                &:hover {
+                    background-color: $cyan6;
+                }
+                &:active {
+                    background-color: $cyan6;
+                }
+                &:visited {
+                    background-color: $cyan6;
+                }
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.blue-dropdown {
+    .dropdown {
+        background-color: $blue5;
+        .user-profile {
+            &:hover {
+                background-color: $blue6;
+            }
+        }
+        .user-profile-active {
+            background-color: $blue6;
+        }
+        .dropdown-container {
+            background-color: $blue5;
+            border-top: 1px solid $blue8;
+            li {
+                &:hover {
+                    background-color: $blue6;
+                }
+                &:active {
+                    background-color: $blue6;
+                }
+                &:visited {
+                    background-color: $blue6;
+                }
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+}

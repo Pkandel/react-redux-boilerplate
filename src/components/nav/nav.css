@@ -10,6 +10,8 @@
       color: white; }
     .navbar li .active {
       color: white; }
+  .navbar botton {
+    background-color: inherit; }
 
 /**************************************
 1. a{ :hover } property does not work so it has to be outside

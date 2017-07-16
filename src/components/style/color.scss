@@ -1,0 +1,57 @@
+/*************** primary colors  **************/
+
+//teal [interMatch]
+$teal9: #004d40;
+$teal8: #00695c;
+$teal7: #00796b;
+$teal6: #00897b;
+$teal5: #009688;
+$teal50: #E0F2F1;
+//$body_background: rgb(236, 240, 241);
+$body_background: white;
+//Text colors
+$white: white;
+$black: black;
+$text: #889eae;
+//cyan
+$cyan9: #006064;
+$cyan8: #00838F;
+$cyan7: #0097A7;
+$cyan6: #00ACC1;
+$cyan5: #00BCD4;
+$cyan50: #EOF7FA;
+$body_background: rgb(236, 240, 241);
+//blue
+$blue9: #0D47A1;
+$blue8: #1565C0;
+$blue7: #1976D2;
+$blue6: #1E88E5;
+$blue5: #2196F3;
+$blue50: #E3F2FD;
+$body_background: rgb(236, 240, 241);
+
+/************ Button **************/
+
+//default theme
+$btn-default-default: #009688;
+$btn-success-default: #00c853;
+$btn-danger-default: #d50000;
+$btn-warning-default: #ffab40;
+//
+
+/************ Button End**************/
+
+
+/*************** primary colors End **************/
+
+//header
+//header End
+//main
+//sidebar
+//sidebar End
+//main End
+//footer
+//footer End
+@mixin background-color($background_color) {
+    background-color: $background_color;
+}

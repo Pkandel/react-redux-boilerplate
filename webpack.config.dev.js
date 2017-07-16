@@ -58,6 +58,22 @@ module.exports = {
                     loader: "sass-loader" // compiles Sass to CSS
                 }
                 ]
+            },
+            {
+                test: /\.css?$/,
+                include: [
+                    path.resolve(__dirname, 'src')
+                ],
+                exclude: [
+                    path.resolve(__dirname, 'node_modules'),
+                    path.resolve(__dirname, 'build')
+                ],
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }
+                ]
             }
         ]
     },

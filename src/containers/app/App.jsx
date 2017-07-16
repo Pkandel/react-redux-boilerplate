@@ -1,6 +1,6 @@
 'use strict';
 import React, { Component } from 'react';
- import { Router } from '../';
+ import { Route } from '../';
  import { Nav } from '../../components';
  import './app.scss';
 
@@ -16,7 +16,7 @@ class App extends Component {
                     <Nav />
                 </div>
                 <div className="body">
-                    <Router />
+                    <Route />
                 </div>
             </div>
         );
