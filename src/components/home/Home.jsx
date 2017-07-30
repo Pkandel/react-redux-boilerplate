@@ -1,5 +1,6 @@
 'use strict';
 import React, { Component } from 'react';
+import * as API from 'api/api_url';
 
 class Home extends Component {
 
@@ -7,6 +8,7 @@ class Home extends Component {
         return(
             <div className="navbar">
                 <h1> this is Home</h1>
+                {API.baseURL}
             </div>
         );
     }
