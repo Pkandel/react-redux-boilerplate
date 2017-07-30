@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     entry: [
@@ -19,6 +20,7 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
+        new Dotenv()
 
     ],
     module: {

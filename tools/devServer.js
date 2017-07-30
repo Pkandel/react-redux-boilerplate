@@ -1,12 +1,10 @@
  /* eslint-disable no-console */
 import colors from 'colors';
 import express from 'express';
-import path from 'path';
 import open from 'open';
 import portfinder from 'portfinder';
 import webpack from 'webpack';
 import config from '../webpack.config.dev';
-require('dotenv').config();
 
 const app = express();
 
