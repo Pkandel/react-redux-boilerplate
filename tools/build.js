@@ -2,7 +2,7 @@
 // Allowing console calls below since this is a build file.
 /* eslint-disable no-console */
 import webpack from 'webpack';
-import config from '../webpack.config.prod';
+import config from '../webpack.config';
 import colors from 'colors';
 
 

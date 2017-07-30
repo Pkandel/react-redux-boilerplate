@@ -2,10 +2,15 @@
     "presets": [
         "es2015", "stage-0","react"
     ],
-    "plugins": [
-        ["transform-es2015-modules-commonjs", {
-            "allowTopLevelThis": true,
-            "loose" : true
-        }]
-    ]
+  "env": {
+    "development":{
+      "plugins":[
+        {
+
+        }
+      ]
+    },
+    "production": {}
+  }
+
 }

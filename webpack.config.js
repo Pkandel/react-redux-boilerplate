@@ -1,31 +1,53 @@
+ /* eslint-disable no-console */
 const path = require('path');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const env = process.env && process.env.NODE_ENV || "development";
+/* 
+    to send a production variable, we have to generate production before 
+    application statrs like NODE_ENV=production npm start
+    other env variable we can use from .env file
+*/
+const dev = env === "development";
 
 module.exports = {
-    entry: [
-        'webpack-hot-middleware/client?reload=true',
-        path.resolve(__dirname, "src")
-    ],
+    entry:  dev
+        ? [
+           'webpack-hot-middleware/client?reload=true',
+            path.resolve(__dirname, "src")
+        ] : path.resolve(__dirname, "src"),
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "bundle.js",
         publicPath: '/'
     },
     devServer: {
-        contentBase: path.resolve(__dirname, 'src')
+        contentBase: path.resolve(__dirname, dev ? 'src' : 'dist')
+
     },
     target: 'web',
-    devtool: 'cheap-module-eval-source-map',
-    plugins: [
+    devtool: dev ? 'cheap-module-eval-source-map' : 'source-map',
+    plugins: dev ? [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
+        new LodashModuleReplacementPlugin,
         new Dotenv()
 
+    ] : [
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new ExtractTextPlugin("styles.css"),
+        new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
+        new CopyWebpackPlugin([
+        {from:'public/images', to: 'images'}
+        ]),
+        new Dotenv()
     ],
     module: {
         rules: [
-            //for jsx loader
             {
                 test: /\.jsx?$/,
                 include: [
@@ -42,7 +64,6 @@ module.exports = {
                     }
                     ]
             },
-            //for sass loader
             {
                 test: /\.scss?$/,
                 include: [
@@ -79,7 +100,6 @@ module.exports = {
             }
         ]
     },
-    //options for resolving module requests
     resolve: {
         modules: [
             'node_modules',
@@ -87,8 +107,8 @@ module.exports = {
         ],
         extensions: ['.js', '.jsx', '.json', '.css', '.sass'],
         alias: {
+            //to use alias support in Webstorm we have to mark src as mark directory as resource root
             mock_api: path.resolve(__dirname, 'src/api/mock_api'),
-            Root: path.resolve(__dirname, 'src/Root.jsx'),
             actions: path.resolve(__dirname, 'src/actions'),
             components: path.resolve(__dirname, 'src/components'),
             config: path.resolve(__dirname, 'src/config'),
@@ -97,10 +117,7 @@ module.exports = {
             store: path.resolve(__dirname, 'src/store'),
             tests: path.resolve(__dirname, 'src/tests'),
             utils: path.resolve(__dirname, 'src/utils'),
-            tools: path.resolve(__dirname, 'tools'),
             api: path.resolve(__dirname, 'src/api'),
-
-
         }
 
     }
