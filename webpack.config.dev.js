@@ -19,7 +19,7 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
-    
+
     ],
     module: {
         rules: [
@@ -85,7 +85,20 @@ module.exports = {
         ],
         extensions: ['.js', '.jsx', '.json', '.css', '.sass'],
         alias: {
-            Root: path.resolve(__dirname, 'src/Root.jsx')
+            mock_api: path.resolve(__dirname, 'src/api/mock_api'),
+            Root: path.resolve(__dirname, 'src/Root.jsx'),
+            actions: path.resolve(__dirname, 'src/actions'),
+            components: path.resolve(__dirname, 'src/components'),
+            config: path.resolve(__dirname, 'src/config'),
+            containers: path.resolve(__dirname, 'src/containers'),
+            reducers: path.resolve(__dirname, 'src/reducers'),
+            store: path.resolve(__dirname, 'src/store'),
+            tests: path.resolve(__dirname, 'src/tests'),
+            utils: path.resolve(__dirname, 'src/utils'),
+            tools: path.resolve(__dirname, 'tools'),
+            api: path.resolve(__dirname, 'src/api'),
+
+
         }
 
     }
