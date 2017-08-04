@@ -6,5 +6,6 @@
   <component name="ProjectPlainTextFileTypeManager">
     <file url="file://$PROJECT_DIR$/src/components/index.js" />
     <file url="file://$PROJECT_DIR$/src/containers/index.js" />
+    <file url="file://$PROJECT_DIR$/src/containers/Try.jsx" />
   </component>
 </project>
