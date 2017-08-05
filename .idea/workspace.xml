@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4cd7727-e576-486f-a828-b0ff357e0daa" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/root.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/root.scss" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/index.js" afterPath="$PROJECT_DIR$/src/components/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/devServer.js" afterPath="$PROJECT_DIR$/tools/devServer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/prodServer.js" afterPath="$PROJECT_DIR$/tools/prodServer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -73,14 +70,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1109">
+            <state relative-caret-position="120">
               <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
               <folding>
-                <marker date="1501898712000" expanded="true" signature="1456:1516" ph="{&quot;axios&quot;: &quot;^0.16.2&quot;...}" />
-                <marker date="1501898712000" expanded="true" signature="2579:3057" ph="{&quot;babel-cli&quot;: &quot;^6.24.1&quot;...}" />
+                <marker date="1501899318000" expanded="true" signature="1492:1552" ph="{&quot;axios&quot;: &quot;^0.16.2&quot;...}" />
+                <marker date="1501899318000" expanded="true" signature="2615:3093" ph="{&quot;babel-cli&quot;: &quot;^6.24.1&quot;...}" />
               </folding>
             </state>
           </provider>
@@ -116,7 +113,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Root.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Root.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Root.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="160">
@@ -183,7 +180,6 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/containers/app/App.jsx" />
         <option value="$PROJECT_DIR$/src/components/home/Home.jsx" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/webpack.config.dev.js" />
         <option value="$PROJECT_DIR$/src/Root.jsx" />
         <option value="$PROJECT_DIR$/public/index.html" />
@@ -193,6 +189,7 @@
         <option value="$PROJECT_DIR$/src/components/index.js" />
         <option value="$PROJECT_DIR$/tools/devServer.js" />
         <option value="$PROJECT_DIR$/tools/prodServer.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -444,7 +441,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36072000" />
+    <option name="totallyTimeSpent" value="36221000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -609,17 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1109">
-          <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding>
-            <marker date="1501898712000" expanded="true" signature="1456:1516" ph="{&quot;axios&quot;: &quot;^0.16.2&quot;...}" />
-            <marker date="1501898712000" expanded="true" signature="2579:3057" ph="{&quot;babel-cli&quot;: &quot;^6.24.1&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/message/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -723,6 +709,17 @@
         <state relative-caret-position="160">
           <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <folding>
+            <marker date="1501899318000" expanded="true" signature="1492:1552" ph="{&quot;axios&quot;: &quot;^0.16.2&quot;...}" />
+            <marker date="1501899318000" expanded="true" signature="2615:3093" ph="{&quot;babel-cli&quot;: &quot;^6.24.1&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>

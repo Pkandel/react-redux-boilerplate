@@ -4,7 +4,7 @@
   "description": "This is a quick start kit for react and redux application using react, react-router, redux, webpack, babel and more..",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel run:server watch:css lint:watch test:watch",
+    "dev": "NODE_ENV=development npm-run-all --parallel run:server watch:css lint:watch test:watch",
     "lint": "node_modules/.bin/esw webpack.config.* src",
     "run:server": "babel-node tools/devServer.js",
     "lint:watch": "npm run lint -- --watch",
@@ -15,9 +15,9 @@
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "node_modules/.bin/rimraf dist",
     "build:html": "babel-node tools/buildHtml.js",
-    "prebuild": "npm-run-all clean-dist test lint build:html",
-    "build": " babel-node tools/build.js",
-    "postbuild": "babel-node tools/prodServer.js"
+    "preprod": "NODE_ENV=production npm-run-all clean-dist test lint build:html",
+    "prod": " babel-node tools/build.js",
+    "postpord": "babel-node tools/prodServer.js"
   },
   "repository": {
     "type": "git",
