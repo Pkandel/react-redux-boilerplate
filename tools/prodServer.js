@@ -17,7 +17,7 @@ portfinder.getPort(function (err, port) {
         if(err) {
             console.log(err.red);
         } else {
-            console.log(`Listening at http://localhost:${port}/`.green);
+            console.log(`Application is running in production mode  at http://localhost:${port}/`.green);
             open(`http://localhost:${port}`);
         }
     });

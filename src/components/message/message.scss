@@ -1,0 +1,23 @@
+.message-component {
+  min-width:200px;
+  min-height: 60px;
+  .info {
+    padding: 8px 20px 8px 15px;
+    background-color: #1E88E5;
+    color:white;
+    .close {
+      float: right;
+      cursor: pointer;
+    }
+  }
+  .success {
+    padding: 8px 20px 8px 15px;
+    background-color: mediumseagreen;
+    color: darkgreen;
+  }
+  .error {
+    padding: 8px 20px 8px 15px;
+    background-color:indianred;
+    color:red;
+  }
+}
