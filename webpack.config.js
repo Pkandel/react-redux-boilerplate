@@ -1,4 +1,4 @@
- /* eslint-disable no-console */
+/* eslint-disable no-console */
 const path = require('path');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
@@ -6,7 +6,7 @@ const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const env = process.env && process.env.NODE_ENV || "development";
+const env = process.env.NODE_ENV || "production";
 /*
     to send a production variable, we have to generate production before
     application statrs like NODE_ENV=production npm start
@@ -15,9 +15,9 @@ const env = process.env && process.env.NODE_ENV || "development";
 const dev = env === "development";
 
 module.exports = {
-    entry:  dev
+    entry: dev
         ? [
-           'webpack-hot-middleware/client?reload=true',
+            'webpack-hot-middleware/client?reload=true',
             path.resolve(__dirname, "src")
         ] : path.resolve(__dirname, "src"),
     output: {
@@ -38,14 +38,14 @@ module.exports = {
         new Dotenv()
 
     ] : [
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new ExtractTextPlugin("styles.css"),
-        new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
-        new CopyWebpackPlugin([
-        {from:'public/images', to: 'images'}
-        ]),
-        new Dotenv()
-    ],
+            new webpack.optimize.OccurrenceOrderPlugin(),
+            new ExtractTextPlugin("styles.css"),
+            new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
+            new CopyWebpackPlugin([
+                { from: 'public/', to: './' }
+            ]),
+            new Dotenv()
+        ],
     module: {
         rules: [
             {
@@ -62,7 +62,7 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                     }
-                    ]
+                ]
             },
             {
                 test: /\.scss?$/,
