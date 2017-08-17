@@ -7,8 +7,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const env = process.env && process.env.NODE_ENV || "development";
-/* 
-    to send a production variable, we have to generate production before 
+/*
+    to send a production variable, we have to generate production before
     application statrs like NODE_ENV=production npm start
     other env variable we can use from .env file
 */

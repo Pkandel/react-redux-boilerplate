@@ -13,6 +13,7 @@ class Message extends Component {
         timeout && setTimeout(() => {
             this.setState({display: false})
         }, timeout*1000);
+
     };
 
     handleClose = () => {
@@ -22,7 +23,7 @@ class Message extends Component {
     };
 
     render() {
-        const {message, messageType} = this.props;
+        const { message, messageType} = this.props;
         const { display } = this.state;
         if(!display) {
             return null;

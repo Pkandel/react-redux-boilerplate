@@ -6,7 +6,7 @@ class Root extends Component {
     render() {
         return (
             <BrowserRouter>
-                <h1>React Redux Boilerplate </h1>
+                 <h1>React Redux Boilerplate </h1>
             </BrowserRouter>
         );
     }

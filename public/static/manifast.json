@@ -1,0 +1,9 @@
+{
+    "name": "Genny alyson project integrated with keycloak and vertx",
+    "short_name": "Alyson",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#FFFFFF",
+    "theme_color": "#FFFFFF"
+}
