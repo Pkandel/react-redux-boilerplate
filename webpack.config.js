@@ -7,6 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const env = process.env.NODE_ENV || "production";
+console.log(`Application running in ${env} mode`);
 /*
     to send a production variable, we have to generate production before
     application statrs like NODE_ENV=production npm start
@@ -30,7 +31,7 @@ module.exports = {
 
     },
     target: 'web',
-    devtool: dev ? 'cheap-module-eval-source-map' : 'source-map',
+    devtool: dev ? 'cheap-module-inline-source-map' : 'source-map',
     plugins: dev ? [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
