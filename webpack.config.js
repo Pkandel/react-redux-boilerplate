@@ -107,18 +107,10 @@ module.exports = {
             path.resolve(__dirname, 'src')
         ],
         extensions: ['.js', '.jsx', '.json', '.css', '.sass'],
+        root: path.resolve('./src'),
         alias: {
             //to use alias support in Webstorm we have to mark src as mark directory as resource root
             mock_api: path.resolve(__dirname, 'src/api/mock_api'),
-            actions: path.resolve(__dirname, 'src/actions'),
-            components: path.resolve(__dirname, 'src/components'),
-            config: path.resolve(__dirname, 'src/config'),
-            containers: path.resolve(__dirname, 'src/containers'),
-            reducers: path.resolve(__dirname, 'src/reducers'),
-            store: path.resolve(__dirname, 'src/store'),
-            tests: path.resolve(__dirname, 'src/tests'),
-            utils: path.resolve(__dirname, 'src/utils'),
-            api: path.resolve(__dirname, 'src/api'),
         }
 
     }
