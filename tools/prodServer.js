@@ -9,16 +9,17 @@ require('dotenv').config();
 
 const app = express();
 app.use(compression());
-app.use(express.static(path.resolve(__dirname,'../dist')));
+app.use(express.static(path.resolve(__dirname, '../dist')));
 
-portfinder.basePort = 3000 || process.env.PORT;
+portfinder.basePort = 3000;
 portfinder.getPort(function (err, port) {
-    app.listen(port, function (err) {
-        if(err) {
-            console.log(err.red);
-        } else {
-            console.log(`Application is running in production mode  at http://localhost:${port}/`.green);
-            open(`http://localhost:${port}`);
-        }
-    });
+  if (err) console.log(err);
+  app.listen(port, function (err) {
+    if (err) {
+      console.log(err.red);
+    } else {
+      console.log(`Application is running in production mode  at http://localhost:${port}/`.green);
+      open(`http://localhost:${port}`);
+    }
+  });
 });
