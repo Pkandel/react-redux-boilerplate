@@ -41,3 +41,10 @@ MIT
    [Docker]: <https://docker.com>
    [Babel]: <https://babeljs.io>
 
+
+### TODO
+
+1. Create following branches
+   react-boilerplate
+   react-redux-boilerplate
+   react-redux-docker-boilerplate
