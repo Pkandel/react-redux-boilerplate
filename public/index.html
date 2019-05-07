@@ -17,14 +17,12 @@
         <meta name="apple-mobile-web-app-title" content="APP TITLE HERE">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <!--<link rel="apple-touch-icon" sizes="180x180" href="/icon/LOGO HERE.png">-->
-        <link rel="manifest" href="/static/manifest.json">
+        <link rel="manifest" href="/assets/manifest.json">
 
         <meta name="msapplication-tap-highlight" content="no">
         <!--<meta name="msapplication-TileImage" content="/icon/LOGO HERE.png">-->
         <meta name="msapplication-TileColor" content="#FFFFFF">
         <meta name="msapplication-navbutton-color" content="#FFFFFF">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <style>
             .loader-container {
                 margin-top: 40vh;
@@ -61,24 +59,6 @@
         </style>
     </head>
     <body>
-    <div class="loader-container" id="loader-container">
-        <div class="loader"></div>
-        <div id="title" >Loading </div>
-    </div>
         <div id="root"></div>
-        <script src="./bundle.js"></script>
-    <script>
-        document.onreadystatechange = function () {
-            const state = document.readyState;
-            if (state === 'interactive') {
-                document.getElementById('root').style.display = "none";
-            } else if (state === 'complete') {
-                setTimeout(function () {
-                    document.getElementById('loader-container').style.display = "none";
-                    document.getElementById('root').style.display = "block";
-                }, 1000);
-            }
-        }
-    </script>
     </body>
 </html>
