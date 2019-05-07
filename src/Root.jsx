@@ -7,7 +7,10 @@ class Root extends Component {
 	render () {
 		return (
 			<BrowserRouter>
-				<h1> React Redux boilerplate with hot module </h1>
+			<div style={{textAlign: 'center'}}>
+				<h1> Welcome to React </h1>
+				<img src="images/user.png" style={{height: 50, width: 50}} />
+			</div>
 			</BrowserRouter>
 		);
 	}
