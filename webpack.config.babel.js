@@ -1,110 +1,108 @@
 /* eslint-disable no-console */
 import path from 'path';
 import webpack from 'webpack';
+import merge from 'webpack-merge'; // merge webpack config
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import merge from 'webpack-merge';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin'; // this will automatically insert the js file in index.html
+const resolveRoot = (...args) => path.resolve(__dirname, ...args);
+const resolveSrc = () => path.resolve(__dirname, 'src');
+
 
 const commonConfig = {
-	entry: path.resolve(__dirname, 'src'),
+	entry: {
+		app: resolveSrc(), // we can load third party library in a separate bundle
+	},
 	output: {
-		path: path.resolve(__dirname, 'dist'),
-		filename: 'js/[name].js'
+		path: resolveRoot('dist'), // We are using webpack-dev-server in dev, so this path is used on production: build file will be sent inside dist folder
+		filename: 'js/[name].js', // Output file goes inside js folder: so our output files resides in dist/js/
 	},
 	module: {
-		rules: [
-			{
-				test: /\.jsx?$/,
-				include: [
-					path.resolve(__dirname, 'src')
-				],
-				exclude: [
-					path.resolve(__dirname, 'node_modules/')
-				],
-				use: {
-					loader: 'babel-loader'
-				}
+		rules: [{
+			test: /\.jsx?$/,
+			include: resolveSrc(),
+			exclude: resolveRoot('node_modules/'),
+			use: 'babel-loader',
+		},
+		{
+			test: /\.scss?$/,
+			include: resolveSrc(),
+			exclude: resolveRoot('node_modules'),
+			use: [
+				'style-loader', // creates style nodes from JS strings
+				'css-loader', // translates CSS into CommonJS
+				'sass-loader', // compiles Sass to CSS
+			],
+		},
+		{
+			test: /\.css?$/,
+			include: resolveSrc(),
+			exclude: resolveRoot('node_modules'),
+			use: [
+				'style-loader', // creates style nodes from JS strings
+				'css-loader', // translates CSS into CommonJS
+				'postcss-loader', // this will make sure to add css prefix support (webkit) for other browser
+			],
+		},
+		],
+	},
+	// this will make sure all the node_modules is separate from main.js file
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				vendors: {
+					test: /[\\/]node_modules[\\/]/,
+					name: 'vendor',
+					chunks: 'all',
+				},
 			},
-			{
-				test: /\.scss?$/,
-				include: [
-					path.resolve(__dirname, 'src')
-				],
-				exclude: [
-					path.resolve(__dirname, 'node_modules')
-				],
-				use: [{
-					loader: 'style-loader' // creates style nodes from JS strings
-				}, {
-					loader: 'css-loader' // translates CSS into CommonJS
-				}, {
-					loader: 'sass-loader' // compiles Sass to CSS
-				}]
-			},
-			{
-				test: /\.css?$/,
-				include: [
-					path.resolve(__dirname, 'src')
-				],
-				exclude: [
-					path.resolve(__dirname, 'node_modules')
-				],
-				use: [{
-					loader: 'style-loader' // creates style nodes from JS strings
-				}, {
-					loader: 'css-loader' // translates CSS into CommonJS
-				}]
-			}
-		]
+		},
 	},
 	plugins: [
 		// this will see the output path of webpack and copy index.html to that place
 		new HtmlWebpackPlugin({
-			template: path.resolve(__dirname, 'public/index.html'),
-			inject: 'body'
+			template: resolveRoot('public/index.html'),
+			inject: 'body',
 		}),
-		new CopyWebpackPlugin([
-			{
-				from: path.resolve(__dirname, 'public/'),
-				to: path.resolve(__dirname, 'dist/')
-			}
-		])
+		new CopyWebpackPlugin([{
+			from: resolveRoot('public/'),
+			to: resolveRoot('dist/'),
+		}, ]),
 	],
 
 	resolve: {
 		modules: [
-			path.resolve(__dirname, 'node_modules'),
-			path.resolve(__dirname, 'src')
+			resolveRoot('node_modules'),
+			resolveSrc(),
 		],
-		extensions: ['.js', '.jsx', '.json', '.css', '.scss'],
+		extensions: ['.js', '.jsx', '.json', '.css', '.scss', ],
 		alias: {
 			'react-dom': '@hot-loader/react-dom',
 			// to use alias support in Webstorm we have to mark src as mark directory as resource root
-			'src': path.resolve(__dirname, 'src')
-		}
+			'src': resolveSrc(),
+		},
 
-	}
+	},
 };
 
 const devConfig = merge(commonConfig, {
 	devtool: 'cheap-module-inline-source-map',
 	mode: 'development',
 	devServer: {
-		contentBase: path.resolve(__dirname, 'public/'),
+		contentBase: resolveRoot('public/'),
 		stats: 'minimal',
 		port: 9000,
-		open: true,
+		// open: true,
 		historyApiFallback: true,
 		disableHostCheck: true,
-		hot: true
+		hot: true,
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
-	]
+		new webpack.HotModuleReplacementPlugin(),
+	],
 });
 const prodConfig = merge(commonConfig, {
 	devtool: 'source-map',
-	mode: 'production'
+	mode: 'production',
 });
 
 
