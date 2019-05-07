@@ -78,8 +78,9 @@ const commonConfig = {
 		],
 		extensions: ['.js', '.jsx', '.json', '.css', '.scss'],
 		alias: {
+			'react-dom': '@hot-loader/react-dom',
 			// to use alias support in Webstorm we have to mark src as mark directory as resource root
-			src: path.resolve(__dirname, 'src')
+			'src': path.resolve(__dirname, 'src')
 		}
 
 	}
@@ -94,7 +95,8 @@ const devConfig = merge(commonConfig, {
 		port: 9000,
 		open: true,
 		historyApiFallback: true,
-		disableHostCheck: true
+		disableHostCheck: true,
+		hot: true
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin()
