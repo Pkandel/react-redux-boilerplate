@@ -1,9 +1,0 @@
-version: '2.0'
-
-services:
-  react-redux-boilerplate:
-    build: .
-    image: react-redux-boilerplate:latest
-     
-    ports:
-      - "3000:3000"
