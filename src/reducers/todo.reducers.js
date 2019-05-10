@@ -17,9 +17,15 @@ export default function reducer(state = initialState, action) {
 			return { ...state,  todos, fetching: false, };
 		}
 		case actions.REMOVE_TODO: {
-			let todos = [...state.todos,];
-			const index = todos.findIndex(item => item.id === action.paylod);
-			todos.splice(index, 1);
+			let todos = [...state.todos, ];
+			todos = todos.filter(todo => todo.id !== action.payload);
+			return { ...state, todos, fetching: false, };
+		}
+		case actions.EDIT_TODO: {
+			const { id, content, } = action.payload;
+			let todos = state.todos.map(todo =>
+				todo.id === id ? { ...todo, ...content, } : todo);
+			console.log(todos);
 			return { ...state, todos, fetching: false, };
 		}
 		default: {
