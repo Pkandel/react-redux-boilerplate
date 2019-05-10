@@ -7,6 +7,7 @@ export const addTodo = content => ({
 		id: ++nextTodoId,
 		content,
 		pinned: false,
+		completed: false,
 	},
 });
 
