@@ -1,0 +1,17 @@
+version: '3'
+services:
+  frontend-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9000:9000
+    volumes:
+      # please add any file or folder you don't want to copy to .dockerignore files
+      - .:/app/
+  frontend-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9000:80

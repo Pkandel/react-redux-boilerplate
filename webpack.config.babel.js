@@ -90,6 +90,7 @@ const devConfig = merge(commonConfig, {
 	devServer: {
 		contentBase: resolveRoot('public/'),
 		stats: 'minimal',
+		host: '0.0.0.0',
 		port: 9000,
 		// open: true,
 		historyApiFallback: true,
