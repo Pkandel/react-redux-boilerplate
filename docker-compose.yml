@@ -14,7 +14,11 @@ services:
   frontend.prod:
     build:
       context: .
-      dockerfile: ./tools/prod/Dockerfile
+      dockerfile: ./tools/prod/Dockerfile.test
     image: frontend:prod
     ports:
-      - 9000:80
+      - ${PORT}:80
+    environment:
+      - PORT=${PORT}
+      - SERVER=${SERVER} # pass this to container to modify nginx conf
+    # command: echo 'Server is running at' ${PORT}

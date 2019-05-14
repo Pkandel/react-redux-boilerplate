@@ -27,4 +27,5 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 RUN find /usr/share/nginx/html \! -name "*.png" \! -name "*.ico" -size +1k -type f -exec gzip -9k {} \;
 
 EXPOSE 80
-CMD ["nginx"]
+RUN nginx
+RUN echo 'Nginx is running on port 80 and you can access it from http://localhost:${PORT}'

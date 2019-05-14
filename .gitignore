@@ -9,3 +9,4 @@ build/
 !.vscode/launch.json
 !.vscode/extensions.json
  .idea/workspace.xml
+ .env
