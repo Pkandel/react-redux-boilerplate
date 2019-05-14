@@ -1,17 +1,20 @@
 version: '3'
 services:
-  frontend-dev:
+  frontend.dev:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./tools/Dockerfile
+    image: frontend:dev
     ports:
       - 9000:9000
     volumes:
-      # please add any file or folder you don't want to copy to .dockerignore files
-      - .:/app/
-  frontend-prod:
+      # Do not match everything otherwise you get conflicts of node_modules folder of osx and linux
+      - ./public:/app/public/
+      - ./src:/app/src/
+  frontend.prod:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./tools/prod/Dockerfile
+    image: frontend:prod
     ports:
       - 9000:80
