@@ -4,7 +4,7 @@
   "description": "This is a boilerplate for react-redux application.",
   "main": "index.js",
   "scripts": {
-    "dev": "npm-run-all --parallel run:server watch:css lint:watch",
+    "dev": "npm-run-all --parallel run:server watch:css",
     "lint": "node_modules/.bin/esw webpack.config.babel.js src",
     "fix": "eslint --fix src/.; exit 0;",
     "run:server": "webpack-dev-server --env.NODE_ENV=development",
