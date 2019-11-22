@@ -14,8 +14,8 @@ module.exports = {
 		app: resolveSrc(), // we can load third party library in a separate bundle
 	},
 	output: {
-		path: resolveRoot('dist'), // We are using webpack-dev-server in dev, so this path is used on production: build file will be sent inside dist folder
-		filename: 'js/[name].js', // Output file goes inside js folder: so our output files resides in dist/js/
+		path: resolveRoot('public'), // This is the output folder for webpack
+		filename: 'js/bundle.min.js', // Output file goes inside js folder: so our output files resides in public/js/
 	},
 	module: {
 		rules: [{
@@ -27,6 +27,7 @@ module.exports = {
 		],
 	},
 	resolve: {
+
 		extensions: ['.js', '.jsx',],
 		alias: {
 			'react-dom': '@hot-loader/react-dom',
@@ -35,6 +36,7 @@ module.exports = {
 	},
 	devServer: {
 		contentBase: resolveRoot('public/'),
+		host:'0.0.0.0',
 		port: 9000,
 		open: true,
 		hot: true,
