@@ -21,13 +21,13 @@ The list of technologies used in this project are as follows
 
 In development mode
 ```sh
-$ git clone https://githun.com/pkandel/cms-frontend
+$ git clone https://github.com/Pkandel/react-redux-boilerplate.git
 $ cd cms-frontend; npm install
 $ npm run dev
 ```
 Build project for production
 ```sh
-$ git clone https://github.com/pkandel/cms-frontend
+$ git clone https://github.com/Pkandel/react-redux-boilerplate.git
 $ cd cms-frontend; npm install
 $ npm run build
 ```
