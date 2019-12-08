@@ -4,11 +4,6 @@ import React, { Component, } from 'react';
 import { BrowserRouter, } from 'react-router-dom';
 
 class Root extends Component {
-	componentDidMount() {
-		fetch('/api/todos/1')
-			.then(response => response.json())
-			.then(json => console.log(json));
-	}
 	render () {
 		return (
 			<BrowserRouter>
