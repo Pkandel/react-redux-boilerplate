@@ -47,7 +47,7 @@ render() {
 						? null
 						: (
 							<div key={todo.id} className={removingId === todo.id ? 'each-todo gray' : 'each-todo'}>
-								<input type="checkbox" onClick={() => this.handleEditTodo(todo.id, { completed: true, })} checked={todo.completed}/>
+								<input type="checkbox" onChange={() => this.handleEditTodo(todo.id, { completed: true, })} checked={todo.completed}/>
 								<div className="todo-text">{ todo.content } </div>
 								{ !todo.pinned && <button className="html-icon-button empty-star" onClick={() => this.handleEditTodo(todo.id, { pinned: true, })}>&#9734;</button> }
 								{ todo.pinned &&	<button className="html-icon-button filled-star" onClick={() => this.handleEditTodo(todo.id, { pinned: false, })}>&#9733;</button> }
@@ -62,7 +62,7 @@ render() {
 					return todo.completed
 						? (
 							<div key={todo.id} className={removingId === todo.id ? 'each-todo gray' : 'each-todo'}>
-								<input type="checkbox" onClick={() => this.handleEditTodo(todo.id, { completed: false, })} checked={todo.completed}/>
+								<input type="checkbox" onChange={() => this.handleEditTodo(todo.id, { completed: !todo.completed, })} checked={todo.completed}/>
 								<div className="todo-text">{ todo.content } </div>
 								{ !todo.pinned && <button className="html-icon-button empty-star" onClick={() => this.handleEditTodo(todo.id, { pinned: true, })}>&#9734;</button> }
 								{ todo.pinned &&	<button className="html-icon-button filled-star" onClick={() => this.handleEditTodo(todo.id, { pinned: false, })}>&#9733;</button> }
@@ -78,7 +78,7 @@ render() {
 					return todo.pinned
 						? (
 							<div key={todo.id} className={removingId === todo.id ? 'each-todo gray' : 'each-todo'}>
-								<input type="checkbox" onClick={() => this.handleEditTodo(todo.id, { completed: false, })} checked={todo.completed}/>
+								<input type="checkbox" onChange={() => this.handleEditTodo(todo.id, { completed: !todo.completed, })} checked={todo.completed}/>
 								<div className="todo-text">{ todo.content } </div>
 								{ !todo.pinned && <button className="html-icon-button empty-star" onClick={() => this.handleEditTodo(todo.id, { pinned: true, })}>&#9734;</button> }
 								{ todo.pinned &&	<button className="html-icon-button filled-star" onClick={() => this.handleEditTodo(todo.id, { pinned: false, })}>&#9733;</button> }
