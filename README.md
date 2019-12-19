@@ -1,6 +1,9 @@
 # React-Only-Boilerplate
 React only boilerplate for fresh starter
 
+`git clone -b react-only-boilerplate --single-branch https://github.com/Pkandel/react-redux-boilerplate.git`
+
+
 ### Technology used
 
 The list of technology used by this project is as follows:
